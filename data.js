@@ -98,7 +98,6 @@ const compounds = [
             { formula: "CH<sub>3</sub>COO<sup>-</sup>", name: "Ânion acetato", type: "anion", difficulty: "facil", tags: ["organico"] },
             { formula: "C<sub>2</sub>H<sub>3</sub>O<sub>2</sub><sup>-</sup>", name: "Ânion acetato (variante)", type: "anion", difficulty: "facil", tags: ["organico"] },
             { formula: "C<sub>6</sub>H<sub>5</sub>COO<sup>-</sup>", name: "Ânion benzoato", type: "anion", difficulty: "dificil", tags: ["organico"] },
-            { formula: "C<sub>2</sub>O<sub>4</sub><sup>2-</sup>", name: "Ânion oxalato", type: "anion", difficulty: "medio", tags: ["organico"] },
             { formula: "N<sup>3-</sup>", name: "Ânion nitreto", type: "anion", difficulty: "medio", tags: ["monoatomico", "nitrogenio"] },
             { formula: "CS<sub>3</sub><sup>2-</sup>", name: "Ânion tiocarbonato", type: "anion", difficulty: "dificil", tags: ["poliatomico", "carbono", "enxofre"] },
             // Ácidos
@@ -200,8 +199,8 @@ const compounds = [
             { formula: "SnO<sub>2</sub>", name: "Óxido de estanho(IV)", type: "oxide", difficulty: "medio", tags: ["anfotero", "metal"] },
             { formula: "Cr<sub>2</sub>O<sub>3</sub>", name: "Óxido de cromo(III)", type: "oxide", difficulty: "medio", tags: ["anfotero", "metal"] },
             { formula: "MnO<sub>2</sub>", name: "Óxido de manganês(IV)", type: "oxide", difficulty: "medio", tags: ["anfotero", "metal"] },
-            { formula: "Fe<sub>3</sub>O<sub>4</sub>", name: "Óxido misto de ferro(II,III)", type: "oxide", difficulty: "dificil", tags: ["misto", "metal"] },
-            { formula: "Pb<sub>3</sub>O<sub>4</sub>", name: "Óxido misto de chumbo(II,IV)", type: "oxide", difficulty: "dificil", tags: ["misto", "metal"] },
+            { formula: "Fe<sub>3</sub>O<sub>4</sub>", name: "Óxido misto de ferro(II,III) (Magnetita)", type: "oxide", difficulty: "dificil", tags: ["misto", "metal", "ferro"] },
+            { formula: "Pb<sub>3</sub>O<sub>4</sub>", name: "Óxido misto de chumbo(II,IV) (Minio)", type: "oxide", difficulty: "dificil", tags: ["misto", "metal", "chumbo"] },
             { formula: "V<sub>2</sub>O<sub>5</sub>", name: "Pentóxido de divanádio", type: "oxide", difficulty: "medio", tags: ["anfotero", "metal", "vanadio"] },
             { formula: "VO<sub>2</sub>", name: "Dióxido de vanádio", type: "oxide", difficulty: "dificil", tags: ["anfotero", "metal", "vanadio"] },
             { formula: "V<sub>2</sub>O<sub>3</sub>", name: "Trióxido de divanádio", type: "oxide", difficulty: "dificil", tags: ["basico", "metal", "vanadio"] },
@@ -253,8 +252,6 @@ const compounds = [
             { formula: "Na<sub>2</sub>B<sub>4</sub>O<sub>7</sub>", name: "Tetraborato de sódio (Borax)", type: "salt", difficulty: "dificil", tags: ["borato", "alcalino"] },
             { formula: "Ca<sub>10</sub>(PO<sub>4</sub>)<sub>6</sub>(OH)<sub>2</sub>", name: "Hidroxiapatita", type: "salt", difficulty: "dificil", tags: ["fosfato", "alcalino_terroso"] },
             { formula: "CaSO<sub>4</sub>·2H<sub>2</sub>O", name: "Gesso", type: "salt", difficulty: "medio", tags: ["sulfato", "alcalino_terroso"] },
-            { formula: "Fe<sub>3</sub>O<sub>4</sub>", name: "Magnetita", type: "salt", difficulty: "dificil", tags: ["misto", "ferro"] },
-            { formula: "Pb<sub>3</sub>O<sub>4</sub>", name: "Minio", type: "salt", difficulty: "dificil", tags: ["misto", "chumbo"] },
             { formula: "FeTiO<sub>3</sub>", name: "Ilmenita", type: "salt", difficulty: "dificil", tags: ["titanato", "ferro"] },
             // Carbonatos extras
             { formula: "BaCO<sub>3</sub>", name: "Carbonato de bário", type: "salt", difficulty: "medio", tags: ["carbonato", "alcalino_terroso"] },

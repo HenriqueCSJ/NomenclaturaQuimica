@@ -1,4 +1,4 @@
-// Banco de dados expandido de compostos com tags para análise
+// Banco de dados expandido de compostos com marcadores para análise
         
 
         // --- Variáveis globais e estado do aplicativo ---
@@ -23,21 +23,36 @@
             carga_variavel: 'Cátions de Carga Variável', transicao: 'Metais de Transição',
             oxianion: 'Oxiânions', hidracido: 'Hidrácidos', oxiacido: 'Oxiácidos',
             ferro: 'Compostos de Ferro', cobre: 'Compostos de Cobre',
-            forte: 'Compostos Fortes', fraca: 'Compostos Fracos',
+            forte: 'Compostos Fortes', fraca: 'Compostos Fracos', fraco: 'Compostos Fracos',
             anfotero: 'Compostos Anfóteros',
             haleto: 'Compostos de Halogênios',
             amonio: 'Sais de Amônio',
             poliatomico: 'Íons Poliatômicos',
-            hidrogenossal: 'Sais Ácidos',
-            cromo: 'Compostos de Cromo',
-            fosforo: 'Compostos de Fósforo',
+            hidrogenossal: 'Sais Ácidos', hidrogenoanion: 'Hidrogeno-ânions',
+            cromo: 'Compostos de Cromo', cromato: 'Cromatos', dicromato: 'Dicromatos',
+            fosforo: 'Compostos de Fósforo', fosfato: 'Fosfatos',
             estanho: 'Compostos de Estanho',
             chumbo: 'Compostos de Chumbo',
-            arsenio: 'Compostos de Arsenio',
+            arsenio: 'Compostos de Arsênio',
             manganes: 'Compostos de Manganês',
-            carbono: 'Compostos de Carbono',
-            boro: 'Compostos de Boro',
-            vanadio: 'Compostos de Vanádio'
+            carbono: 'Compostos de Carbono', carbonato: 'Carbonatos',
+            boro: 'Compostos de Boro', borato: 'Boratos',
+            vanadio: 'Compostos de Vanádio', vanadato: 'Vanadatos',
+            nitrogenio: 'Compostos de Nitrogênio', nitrato: 'Nitratos', nitrito: 'Nitritos',
+            enxofre: 'Compostos de Enxofre', sulfato: 'Sulfatos', sulfito: 'Sulfitos', sulfeto: 'Sulfetos',
+            tiossulfato: 'Tiossulfatos', tiocianato: 'Tiocianatos', cianato: 'Cianatos',
+            alcalino: 'Metais Alcalinos', alcalino_terroso: 'Metais Alcalino-Terrosos',
+            calcogenio: 'Calcogênios', monoatomico: 'Íons Monoatômicos',
+            metal: 'Metais', ametal: 'Ametais',
+            acido: 'Óxidos Ácidos', basico: 'Óxidos Básicos', neutro: 'Óxidos Neutros',
+            misto: 'Compostos Mistos', moderado: 'Força Moderada',
+            organico: 'Compostos Orgânicos', peroxido: 'Peróxidos',
+            post_transicao: 'Pós-Transição', raro: 'Terras Raras',
+            grupo13: 'Grupo 13', titanio: 'Compostos de Titânio', titanato: 'Titanatos',
+            mercurio: 'Compostos de Mercúrio', niquel: 'Compostos de Níquel',
+            cobalto: 'Compostos de Cobalto', ouro: 'Compostos de Ouro',
+            tungstenio: 'Compostos de Tungstênio', molibdenio: 'Compostos de Molibdênio',
+            amonia: 'Amônia'
         };
 
         // --- Funções do Aplicativo ---
@@ -131,7 +146,7 @@
             const correctValue = isFormulaMode ? correctAnswer.formula : correctAnswer.name;
             const propertyToCompare = isFormulaMode ? 'formula' : 'name';
 
-            // Tags que não indicam o elemento/família e devem ser ignoradas na busca por similaridade
+            // Marcadores que não indicam o elemento/família e devem ser ignorados na busca por similaridade
             const ignoreTags = ['facil', 'medio', 'dificil', 'oxianion', 'monoatomico', 'poliatomico', 'forte', 'fraco', 'moderado', 'basico', 'acido', 'neutro', 'anfotero', 'misto', 'organico', 'hidrogenoanion'];
             const meaningfulTags = (correctAnswer.tags || []).filter(t => !ignoreTags.includes(t));
 
@@ -149,7 +164,7 @@
                 !level1.includes(c)
             );
 
-            // Nível 3: Qualquer outro (fallback)
+            // Nível 3: Qualquer outro (reserva)
             let level3 = compounds.filter(c => 
                 c[propertyToCompare] !== correctValue &&
                 !level1.includes(c) && !level2.includes(c)
@@ -350,7 +365,7 @@
             nextQuestion();
         }
 
-        // --- Novas Funções ---
+        // --- Funções Adicionais ---
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
             const themeToggleBtn = document.querySelector('.theme-toggle');
